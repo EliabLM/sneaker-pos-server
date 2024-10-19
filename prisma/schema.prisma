@@ -13,75 +13,175 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
-  userId String @id
-  name   String
-  email  String
+enum Role {
+  SELLER
+  ADMIN
 }
 
-model Products {
-  productId     String      @id
+enum PurchaseStatus {
+  PENDING
+  PAID
+  CANCELLED
+  EXPIRE
+}
+
+enum SaleStatus {
+  PENDING
+  PAID
+  CANCELLED
+}
+
+model User {
+  id            Int      @id @default(autoincrement())
+  code          String   @unique
   name          String
-  price         Float
-  rating        Float?
-  stockQuantity Int
-  Sales         Sales[]
-  Puchases      Purchases[]
+  email         String
+  role          Role
+  active        Boolean  @default(true)
+  creation_date DateTime @default(now())
+  Sale          Sale[]
 }
 
-model Sales {
-  saleId      String   @id
-  productId   String
-  timestamp   DateTime
-  quantity    Int
-  unitPrice   Float
-  totalAmount Float
-  Product     Products @relation(fields: [productId], references: [productId])
+model Customer {
+  id            Int      @id @default(autoincrement())
+  name          String
+  email         String
+  phone         String
+  active        Boolean  @default(true)
+  creation_date DateTime @default(now())
+  Sale          Sale[]
 }
 
-model Purchases {
-  purchaseId String   @id
-  productId  String
-  timestamp  DateTime
-  quantity   Int
-  unitCost   Float
-  totalCost  Float
-  Product    Products @relation(fields: [productId], references: [productId])
+model Supplier {
+  id            Int        @id @default(autoincrement())
+  name          String
+  email         String
+  phone         String
+  active        Boolean    @default(true)
+  creation_date DateTime   @default(now())
+  Purchase      Purchase[]
 }
 
-model Expenses {
-  expenseId String   @id
-  category  String
-  amount    Float
-  timestamp DateTime
+model Brand {
+  id            Int       @id @default(autoincrement())
+  name          String
+  logo          String
+  active        Boolean   @default(true)
+  creation_date DateTime  @default(now())
+  Product       Product[]
+}
+
+model Category {
+  id            Int       @id @default(autoincrement())
+  name          String
+  active        Boolean   @default(true)
+  creation_date DateTime  @default(now())
+  Product       Product[]
+}
+
+model Product {
+  id             Int              @id @default(autoincrement())
+  name           String
+  description    String?
+  image          String?
+  stock          Int
+  price          Decimal
+  brand_id       Int
+  category_id    Int?
+  active         Boolean          @default(true)
+  creation_date  DateTime         @default(now())
+  brand          Brand            @relation(fields: [brand_id], references: [id], onDelete: Restrict)
+  category       Category?        @relation(fields: [category_id], references: [id])
+  SaleDetail     SaleDetail[]
+  PurchaseDetail PurchaseDetail[]
+}
+
+model Location {
+  id            Int      @id @default(autoincrement())
+  name          String
+  description   String?
+  address       String
+  active        Boolean  @default(true)
+  creation_date DateTime @default(now())
+  Sale          Sale[]
+}
+
+model PaymentMethod {
+  id            Int      @id @default(autoincrement())
+  name          String
+  active        Boolean  @default(true)
+  creation_date DateTime @default(now())
+  Sale          Sale[]
+}
+
+model Sale {
+  id                  Int           @id @default(autoincrement())
+  user_id             Int?
+  user_name           String?
+  customer_id         Int?
+  customer_name       String?
+  total               Decimal
+  payment_method_id   Int
+  payment_method_name String
+  location_id         Int
+  location_name       String
+  sale_status         SaleStatus
+  date                DateTime
+  creation_date       DateTime      @default(now())
+  user                User?         @relation(fields: [user_id], references: [id])
+  customer            Customer?     @relation(fields: [customer_id], references: [id])
+  location            Location      @relation(fields: [location_id], references: [id], onDelete: Restrict)
+  paymentMethod       PaymentMethod @relation(fields: [payment_method_id], references: [id], onDelete: Restrict)
+  SaleDetail          SaleDetail[]
+}
+
+model SaleDetail {
+  id            Int      @id @default(autoincrement())
+  sale_id       Int
+  product_id    Int
+  quantity      Int
+  unit_price    Decimal
+  subtotal      Decimal
+  creation_date DateTime @default(now())
+  sale          Sale     @relation(fields: [sale_id], references: [id], onDelete: Restrict)
+  product       Product  @relation(fields: [product_id], references: [id], onDelete: Restrict)
 }
 
 model SalesSummary {
-  salesSummaryId   String   @id
-  totalValue       Float
-  changePercentage Float?
-  date             DateTime
+  id               Int      @id @default(autoincrement())
+  total            Decimal
+  changePercentage Decimal
+  creation_date    DateTime @default(now())
+}
+
+model Purchase {
+  id              Int              @id @default(autoincrement())
+  supplier_id     Int
+  supplier_name   String
+  total           Decimal
+  purchase_status PurchaseStatus
+  date            DateTime
+  expiration_date DateTime
+  creation_date   DateTime         @default(now())
+  supplier        Supplier         @relation(fields: [supplier_id], references: [id], onDelete: Restrict)
+  PurchaseDetail  PurchaseDetail[]
+}
+
+model PurchaseDetail {
+  id            Int      @id @default(autoincrement())
+  purchase_id   Int
+  product_id    Int
+  quantity      Int
+  unit_price    Decimal
+  subtotal      Decimal
+  creation_date DateTime @default(now())
+  purchase      Purchase @relation(fields: [purchase_id], references: [id], onDelete: Restrict)
+  product       Product  @relation(fields: [product_id], references: [id], onDelete: Restrict)
 }
 
 model PurchaseSummary {
-  purchaseSummaryId String   @id
-  totalPurchased    Float
-  changePercentage  Float?
-  date              DateTime
-}
-
-model ExpenseSummary {
-  expenseSummaryId  String              @id
-  totalExpenses     Float
-  date              DateTime
-  ExpenseByCategory ExpenseByCategory[]
-}
-
-model ExpenseByCategory {
-  expenseByCategoryId String         @id
-  expenseSummaryId    String
-  category            String
-  amount              BigInt
-  date                DateTime
-  expensesSummary     ExpenseSummary @relation(fields: [expenseSummaryId], references: [expenseSummaryId])
+  id               Int      @id @default(autoincrement())
+  total            Decimal
+  changePercentage Decimal
+  creation_date    DateTime @default(now())
 }

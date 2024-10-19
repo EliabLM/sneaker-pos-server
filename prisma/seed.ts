@@ -9,7 +9,7 @@ async function deleteAllData(orderedFileNames: string[]) {
         return modelName.charAt(0).toUpperCase() + modelName.slice(1);
     });
 
-    for (const modelName of modelNames) {
+    for (const modelName of modelNames.reverse()) {
         const model: any = prisma[modelName as keyof typeof prisma];
         if (model) {
             await model.deleteMany({});
@@ -26,15 +26,20 @@ async function main() {
     const dataDirectory = path.join(__dirname, "seedData");
 
     const orderedFileNames = [
-        "products.json",
-        "expenseSummary.json",
-        "sales.json",
+        "brand.json",
+        "category.json",
+        "location.json",
+        "paymentMethod.json",
+        "product.json",
+        "user.json",
+        "supplier.json",
+        "customer.json",
+        "sale.json",
+        "saleDetail.json",
+        "purchase.json",
+        "purchaseDetail.json",
         "salesSummary.json",
-        "purchases.json",
         "purchaseSummary.json",
-        "users.json",
-        "expenses.json",
-        "expenseByCategory.json",
     ];
 
     await deleteAllData(orderedFileNames);

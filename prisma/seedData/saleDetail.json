@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "sale_id": 1,
+    "product_id": 1,
+    "quantity": 1,
+    "unit_price": 175.0,
+    "subtotal": 175.0,
+    "creation_date": "2024-09-21T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "sale_id": 1,
+    "product_id": 5,
+    "quantity": 1,
+    "unit_price": 95.0,
+    "subtotal": 95.0,
+    "creation_date": "2024-09-21T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "sale_id": 2,
+    "product_id": 4,
+    "quantity": 1,
+    "unit_price": 190.0,
+    "subtotal": 190.0,
+    "creation_date": "2024-09-22T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "sale_id": 2,
+    "product_id": 2,
+    "quantity": 1,
+    "unit_price": 190.0,
+    "subtotal": 190.0,
+    "creation_date": "2024-09-22T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "sale_id": 3,
+    "product_id": 3,
+    "quantity": 1,
+    "unit_price": 135.0,
+    "subtotal": 135.0,
+    "creation_date": "2024-09-23T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "sale_id": 3,
+    "product_id": 7,
+    "quantity": 1,
+    "unit_price": 135.0,
+    "subtotal": 135.0,
+    "creation_date": "2024-09-23T12:00:00Z"
+  },
+  {
+    "id": 7,
+    "sale_id": 4,
+    "product_id": 10,
+    "quantity": 1,
+    "unit_price": 250.0,
+    "subtotal": 250.0,
+    "creation_date": "2024-09-24T12:00:00Z"
+  },
+  {
+    "id": 8,
+    "sale_id": 4,
+    "product_id": 9,
+    "quantity": 1,
+    "unit_price": 250.0,
+    "subtotal": 250.0,
+    "creation_date": "2024-09-24T12:00:00Z"
+  },
+  {
+    "id": 9,
+    "sale_id": 5,
+    "product_id": 6,
+    "quantity": 1,
+    "unit_price": 175.0,
+    "subtotal": 175.0,
+    "creation_date": "2024-09-25T12:00:00Z"
+  },
+  {
+    "id": 10,
+    "sale_id": 5,
+    "product_id": 8,
+    "quantity": 1,
+    "unit_price": 175.0,
+    "subtotal": 175.0,
+    "creation_date": "2024-09-25T12:00:00Z"
+  },
+  {
+    "id": 11,
+    "sale_id": 6,
+    "product_id": 1,
+    "quantity": 2,
+    "unit_price": 175.0,
+    "subtotal": 350.0,
+    "creation_date": "2024-09-26T12:00:00Z"
+  },
+  {
+    "id": 12,
+    "sale_id": 6,
+    "product_id": 5,
+    "quantity": 1,
+    "unit_price": 95.0,
+    "subtotal": 95.0,
+    "creation_date": "2024-09-26T12:00:00Z"
+  },
+  {
+    "id": 13,
+    "sale_id": 7,
+    "product_id": 2,
+    "quantity": 1,
+    "unit_price": 190.0,
+    "subtotal": 190.0,
+    "creation_date": "2024-09-27T12:00:00Z"
+  },
+  {
+    "id": 14,
+    "sale_id": 7,
+    "product_id": 4,
+    "quantity": 1,
+    "unit_price": 190.0,
+    "subtotal": 190.0,
+    "creation_date": "2024-09-27T12:00:00Z"
+  },
+  {
+    "id": 15,
+    "sale_id": 8,
+    "product_id": 3,
+    "quantity": 1,
+    "unit_price": 135.0,
+    "subtotal": 135.0,
+    "creation_date": "2024-09-28T12:00:00Z"
+  },
+  {
+    "id": 16,
+    "sale_id": 8,
+    "product_id": 9,
+    "quantity": 1,
+    "unit_price": 240.0,
+    "subtotal": 240.0,
+    "creation_date": "2024-09-28T12:00:00Z"
+  },
+  {
+    "id": 17,
+    "sale_id": 9,
+    "product_id": 10,
+    "quantity": 1,
+    "unit_price": 300.0,
+    "subtotal": 300.0,
+    "creation_date": "2024-09-29T12:00:00Z"
+  },
+  {
+    "id": 18,
+    "sale_id": 9,
+    "product_id": 7,
+    "quantity": 1,
+    "unit_price": 300.0,
+    "subtotal": 300.0,
+    "creation_date": "2024-09-29T12:00:00Z"
+  },
+  {
+    "id": 19,
+    "sale_id": 10,
+    "product_id": 6,
+    "quantity": 1,
+    "unit_price": 160.0,
+    "subtotal": 160.0,
+    "creation_date": "2024-09-30T12:00:00Z"
+  },
+  {
+    "id": 20,
+    "sale_id": 10,
+    "product_id": 8,
+    "quantity": 1,
+    "unit_price": 160.0,
+    "subtotal": 160.0,
+    "creation_date": "2024-09-30T12:00:00Z"
+  }
+]

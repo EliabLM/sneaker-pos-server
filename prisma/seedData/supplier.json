@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "SportWare Distributors",
+    "email": "sales@sportware.com",
+    "phone": "1234567890",
+    "active": true,
+    "creation_date": "2024-09-10T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "ActiveFoot Supplies",
+    "email": "contact@activefoot.com",
+    "phone": "0987654321",
+    "active": true,
+    "creation_date": "2024-09-11T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "ProRunner Distributors",
+    "email": "info@prorunner.com",
+    "phone": "4567891230",
+    "active": true,
+    "creation_date": "2024-09-12T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "FastTrack Wholesale",
+    "email": "sales@fasttrack.com",
+    "phone": "7891234560",
+    "active": true,
+    "creation_date": "2024-09-13T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "name": "PeakPerformance Suppliers",
+    "email": "support@peakperformance.com",
+    "phone": "3216549870",
+    "active": true,
+    "creation_date": "2024-09-14T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Velocity Gear",
+    "email": "contact@velocitygear.com",
+    "phone": "6549873210",
+    "active": true,
+    "creation_date": "2024-09-15T12:00:00Z"
+  },
+  {
+    "id": 7,
+    "name": "StrideSource Distributors",
+    "email": "sales@stridesource.com",
+    "phone": "1472583690",
+    "active": true,
+    "creation_date": "2024-09-16T12:00:00Z"
+  },
+  {
+    "id": 8,
+    "name": "Endurance Sports Supplies",
+    "email": "info@endurancesports.com",
+    "phone": "2583691470",
+    "active": true,
+    "creation_date": "2024-09-17T12:00:00Z"
+  },
+  {
+    "id": 9,
+    "name": "Sprint Wholesale",
+    "email": "support@sprintwholesale.com",
+    "phone": "3691472580",
+    "active": true,
+    "creation_date": "2024-09-18T12:00:00Z"
+  },
+  {
+    "id": 10,
+    "name": "RunnerPro Gear",
+    "email": "sales@runnerpro.com",
+    "phone": "7896541230",
+    "active": true,
+    "creation_date": "2024-09-19T12:00:00Z"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "UltraRun",
+    "logo": "ultrarun_logo.png",
+    "active": true,
+    "creation_date": "2024-08-01T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "SpeedMax",
+    "logo": "speedmax_logo.png",
+    "active": true,
+    "creation_date": "2024-08-02T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "AthletePro",
+    "logo": "athletepro_logo.png",
+    "active": true,
+    "creation_date": "2024-08-03T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "PowerStride",
+    "logo": "powerstride_logo.png",
+    "active": true,
+    "creation_date": "2024-08-04T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "name": "FlexiRun",
+    "logo": "flexirun_logo.png",
+    "active": true,
+    "creation_date": "2024-08-05T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "name": "TrackMaster",
+    "logo": "trackmaster_logo.png",
+    "active": true,
+    "creation_date": "2024-08-06T12:00:00Z"
+  },
+  {
+    "id": 7,
+    "name": "EnduraFit",
+    "logo": "endurafit_logo.png",
+    "active": true,
+    "creation_date": "2024-08-07T12:00:00Z"
+  },
+  {
+    "id": 8,
+    "name": "TrailBlaze",
+    "logo": "trailblaze_logo.png",
+    "active": true,
+    "creation_date": "2024-08-08T12:00:00Z"
+  },
+  {
+    "id": 9,
+    "name": "MotionX",
+    "logo": "motionx_logo.png",
+    "active": true,
+    "creation_date": "2024-08-09T12:00:00Z"
+  },
+  {
+    "id": 10,
+    "name": "StrideElite",
+    "logo": "strideelite_logo.png",
+    "active": true,
+    "creation_date": "2024-08-10T12:00:00Z"
+  }
+]

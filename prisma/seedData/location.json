@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Tienda Centro",
+    "description": "Ubicación en el centro de la ciudad.",
+    "address": "Calle 1, No. 123, Ciudad",
+    "active": true,
+    "creation_date": "2024-09-01T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Tienda Norte",
+    "description": "Sucursal en la zona norte.",
+    "address": "Avenida 2, No. 456, Ciudad",
+    "active": true,
+    "creation_date": "2024-09-02T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Tienda Sur",
+    "description": "Sucursal en la zona sur.",
+    "address": "Calle 3, No. 789, Ciudad",
+    "active": true,
+    "creation_date": "2024-09-03T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Tienda Este",
+    "description": "Sucursal en la zona este.",
+    "address": "Avenida 4, No. 101, Ciudad",
+    "active": true,
+    "creation_date": "2024-09-04T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Tienda Oeste",
+    "description": "Sucursal en la zona oeste.",
+    "address": "Calle 5, No. 202, Ciudad",
+    "active": true,
+    "creation_date": "2024-09-05T12:00:00Z"
+  }
+]

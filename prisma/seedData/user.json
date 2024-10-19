@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "code": "A1B2C3",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "role": "SELLER",
+    "active": true,
+    "creation_date": "2023-10-01T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "code": "D4E5F6",
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "role": "ADMIN",
+    "active": false,
+    "creation_date": "2023-10-02T11:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "code": "G7H8I9",
+    "name": "Mike Johnson",
+    "email": "mike.johnson@example.com",
+    "role": "SELLER",
+    "active": true,
+    "creation_date": "2023-10-03T12:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "code": "J1K2L3",
+    "name": "Anna Davis",
+    "email": "anna.davis@example.com",
+    "role": "ADMIN",
+    "active": true,
+    "creation_date": "2023-10-04T13:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "code": "M4N5O6",
+    "name": "Chris Lee",
+    "email": "chris.lee@example.com",
+    "role": "SELLER",
+    "active": false,
+    "creation_date": "2023-10-05T14:00:00.000Z"
+  },
+  {
+    "id": 6,
+    "code": "P7Q8R9",
+    "name": "Patricia Brown",
+    "email": "patricia.brown@example.com",
+    "role": "ADMIN",
+    "active": true,
+    "creation_date": "2023-10-06T15:00:00.000Z"
+  }
+]
