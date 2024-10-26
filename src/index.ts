@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 
 // ROUTE IMPORTS
 import dashboardRoutes from "./routes/dashboardRoutes";
+import productRouter from "./routes/productsRoutes";
 
 // CONFIGURATION
 dotenv.config();
@@ -22,10 +23,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // ROUTES
-app.use("/api/dashboard", dashboardRoutes)
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/products", productRouter);
 
 // START SERVER
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });

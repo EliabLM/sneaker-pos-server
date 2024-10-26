@@ -4,71 +4,71 @@ import path from "path";
 const prisma = new PrismaClient();
 
 async function deleteAllData(orderedFileNames: string[]) {
-    const modelNames = orderedFileNames.map((fileName) => {
-        const modelName = path.basename(fileName, path.extname(fileName));
-        return modelName.charAt(0).toUpperCase() + modelName.slice(1);
-    });
+  const modelNames = orderedFileNames.map((fileName) => {
+    const modelName = path.basename(fileName, path.extname(fileName));
+    return modelName.charAt(0).toUpperCase() + modelName.slice(1);
+  });
 
-    for (const modelName of modelNames.reverse()) {
-        const model: any = prisma[modelName as keyof typeof prisma];
-        if (model) {
-            await model.deleteMany({});
-            console.log(`Cleared data from ${modelName}`);
-        } else {
-            console.error(
-                `Model ${modelName} not found. Please ensure the model name is correctly specified.`
-            );
-        }
+  for (const modelName of modelNames.reverse()) {
+    const model: any = prisma[modelName as keyof typeof prisma];
+    if (model) {
+      await model.deleteMany({});
+      console.log(`Cleared data from ${modelName}`);
+    } else {
+      console.error(
+        `Model ${modelName} not found. Please ensure the model name is correctly specified.`,
+      );
     }
+  }
 }
 
 async function main() {
-    const dataDirectory = path.join(__dirname, "seedData");
+  const dataDirectory = path.join(__dirname, "seedData");
 
-    const orderedFileNames = [
-        "brand.json",
-        "category.json",
-        "location.json",
-        "paymentMethod.json",
-        "product.json",
-        "user.json",
-        "supplier.json",
-        "customer.json",
-        "sale.json",
-        "saleDetail.json",
-        "purchase.json",
-        "purchaseDetail.json",
-        "salesSummary.json",
-        "purchaseSummary.json",
-    ];
+  const orderedFileNames = [
+    "brand.json",
+    "category.json",
+    "location.json",
+    "paymentMethod.json",
+    "product.json",
+    "user.json",
+    "supplier.json",
+    "customer.json",
+    "sale.json",
+    "saleDetail.json",
+    "purchase.json",
+    "purchaseDetail.json",
+    "salesSummary.json",
+    "purchaseSummary.json",
+  ];
 
-    await deleteAllData(orderedFileNames);
+  await deleteAllData(orderedFileNames);
 
-    for (const fileName of orderedFileNames) {
-        const filePath = path.join(dataDirectory, fileName);
-        const jsonData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-        const modelName = path.basename(fileName, path.extname(fileName));
-        const model: any = prisma[modelName as keyof typeof prisma];
+  for (const fileName of orderedFileNames) {
+    const filePath = path.join(dataDirectory, fileName);
+    const jsonData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    const modelName = path.basename(fileName, path.extname(fileName));
+    const model: any = prisma[modelName as keyof typeof prisma];
 
-        if (!model) {
-            console.error(`No Prisma model matches the file name: ${fileName}`);
-            continue;
-        }
-
-        for (const data of jsonData) {
-            await model.create({
-                data,
-            });
-        }
-
-        console.log(`Seeded ${modelName} with data from ${fileName}`);
+    if (!model) {
+      console.error(`No Prisma model matches the file name: ${fileName}`);
+      continue;
     }
+
+    for (const data of jsonData) {
+      await model.create({
+        data,
+      });
+    }
+
+    console.log(`Seeded ${modelName} with data from ${fileName}`);
+  }
 }
 
 main()
-    .catch((e) => {
-        console.error(e);
-    })
-    .finally(async () => {
-        await prisma.$disconnect();
-    });
+  .catch((e) => {
+    console.error(e);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
